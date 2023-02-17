@@ -19,7 +19,7 @@ spec:
           app: group4-app
       spec:
         containers:
-          - image:962804699607.dkr.ecr.us-west-2.amazonaws.com/trql-ecr-repo:latest
+          - image: 962804699607.dkr.ecr.us-west-2.amazonaws.com/trql-ecr-repo:latest
             imagePullPolicy: Always
             name: group4-app
             ports:

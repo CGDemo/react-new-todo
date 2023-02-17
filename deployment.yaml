@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: group4-app
+    app.kubernetes.io/instance: group4-app-instance
+    app.kubernetes.io/version: '1.0.0'
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/managed-by: kubectl
+  name: group-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: group4-app
+    template:
+      metadata:
+        labels:
+          app: group4-app
+      spec:
+        containers:
+          - image:962804699607.dkr.ecr.us-west-2.amazonaws.com/trql-ecr-repo:latest
+            imagePullPolicy: Always
+            name: group4-app
+            ports:
+              - containerPort: 3000
